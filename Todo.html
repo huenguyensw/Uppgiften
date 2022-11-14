@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>to do</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Todo.css">
+</head>
+<body>
+    <form id="create-task">
+        <input type="text" id="enter-task" placeholder="Din syssla">
+        <button id="add-task">Lägg till</button>
+        <button onclick="callReload()">Återställ</button>
+        <label id="errMessage"style="display: none;color:red;font-size:1.1rem">Får ej skapa tomma sysslor</label>
+    </form>
+    <form id="todo">
+        <h2>Att göra</h2>
+        <ul></ul>
+    </form>
+    <form id="done">
+        <h2>Färdiga</h2>
+        <ul></ul>
+    </form>
+    <script src="js/Todo.js"></script>
+</body>
+</html>
