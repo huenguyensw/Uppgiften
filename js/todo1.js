@@ -90,38 +90,8 @@ function moveTaskToDone(task) {
     let done = document.getElementById('done');
     task.addEventListener('click', function (event) {
         event.preventDefault();
-        //create li tag for new done task
-        let li = document.createElement('li');
-        done.lastElementChild.appendChild(li);
-
-        //create text field for new done task
-        let text = document.createElement('input');
-        text.type = 'text';
-        text.value = task.parentNode.firstElementChild.value;
-        text.disabled = true;
-        li.appendChild(text);
-
-        //create edit and delete buttons for new done task
-        let edit = document.createElement('button');
-        edit.innerText = 'Ändra';
-        li.appendChild(edit);
-        editTask(edit);
-
-        let del = document.createElement('button');
-        del.innerText = 'Radera';
-        li.appendChild(del);
-        deleteTask(del);
-
-        //create label error message in case change task to empty.
-        let label = document.createElement('label');
-        label.innerText = 'Får ej skapa tomma sysslor';
-        label.style.display = 'none';
-        label.style.fontSize = '1.1rem';
-        label.style.color = 'red';
-        li.appendChild(label);
-
-        //delete task from todo list
-        task.parentNode.remove();
+        document.getElementById('done').lastElementChild.appendChild(task.parentNode);
+        task.remove();
     })
 }
 

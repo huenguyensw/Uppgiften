@@ -82,8 +82,9 @@ class taskItem{
     done(task){
         task.addEventListener('click', function (event) {
             event.preventDefault();
-            const doneTask = new doneTaskItem(task);
-            task.parentNode.remove();
+            document.getElementById('done').lastElementChild.appendChild(task.parentNode);
+            //delete button Färdig
+            task.remove();
         })
     }
     delete(task){
@@ -93,70 +94,4 @@ class taskItem{
         })
     }
 
-}
-
-class doneTaskItem{
-    constructor(taskName){
-        let done = document.getElementById('done');
-        //create li tag for new done task
-        let li = document.createElement('li');
-        done.lastElementChild.appendChild(li);
-
-        //create text field for new done task
-        let text = document.createElement('input');
-        text.type = 'text';
-        text.value = taskName.parentNode.firstElementChild.value;
-        text.disabled = true;
-        li.appendChild(text);
-
-        //create edit and delete buttons for new done task
-        let edit = document.createElement('button');
-        edit.innerText = 'Ändra';
-        li.appendChild(edit);
-        this.edit(edit);
-
-        let del = document.createElement('button');
-        del.innerText = 'Radera';
-        li.appendChild(del);
-        this.delete(del);
-
-        //create label error message in case change task to empty.
-        let label = document.createElement('label');
-        label.innerText = 'Får ej skapa tomma sysslor';
-        label.style.display = 'none';
-        label.style.fontSize = '1.1rem';
-        label.style.color = 'red';
-        li.appendChild(label);
-    }
-    edit(task){
-        task.addEventListener('click', function (event) {
-            event.preventDefault();
-            if (task.innerText == 'Ändra') {
-                task.innerText = 'Spara';
-                task.previousElementSibling.disabled = false;
-
-                if (task.nextElementSibling.innerText == 'Färdig') {
-                    task.nextElementSibling.disabled = true;
-                }
-            } else if (task.innerText == 'Spara') {
-
-                if (!(task.previousElementSibling.value.trim())) {
-                    task.parentNode.lastElementChild.style.display = 'block';
-                } else {
-                    task.parentNode.lastElementChild.style.display = 'none';
-                    task.innerText = 'Ändra';
-                    task.previousElementSibling.disabled = true;
-                    if (task.nextElementSibling.innerText == 'Färdig') {
-                        task.nextElementSibling.disabled = false;
-                    }
-                }
-            }
-        })
-    }
-    delete(task){
-        task.addEventListener('click', function (event) {
-            event.preventDefault();
-            task.parentNode.remove();
-        })
-    }
 }
