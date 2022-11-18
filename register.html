@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Register Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <form id="main-container">
+        <h2>Register here!</h2>
+        <p>Fields with <span style="color:red">*</span> are required.</p>
+        <p style="display:none;"></p>
+        <div class="email-pass">
+            <div class="email">
+                <div><label for="email">Email<span style="color:red">*</span></label></div>
+                <input type="email" id="email">
+            </div>
+            <div class="pass">
+                <div><label for="password">Password<span style="color:red">*</span></label></div>
+                <input type="password" id="password">
+            </div>
+        </div>
+        <div class="address">
+            <div><label for="address1">Address<span style="color:red">*</span></label></div>
+            <input type="text" id="address1" placeholder="Street address, e.g: Persikogatan">
+        </div>
+        <div class="address">
+            <div><label for="address2">Address 2<span style="color:red">*</span></label></div>
+            <input type="text" id="address2" placeholder="Apartment number and floor, eg: No 83, second floor. ">
+        </div>
+        <div class="city-zip-birthday">
+            <div class="city">
+                <div><label for="city">City<span style="color:red">*</span></label></div>
+                <input type="text" id="city">
+            </div>
+            <div class="Zip">
+                <div><label for="zip">Zip<span style="color:red">*</span></label></div>
+                <input type="text" id="zip">
+            </div>
+            <div class="birthyear">
+                <div><label for="birthyear">Birth Year<span style="color:red">*</span></label></div>
+                <select name="year" id="birthyear"></select>
+            </div>
+        </div>
+        <div class="textarea">
+            <div><label for="textarea">Additional Comments</label></div>
+            <textarea id="textarea" rows="6" cols="149"></textarea>
+        </div>
+        <div class="policy">
+            <label style="display:none; color: red">You need to read and accept terms before doing registration.</label>
+            <input type="checkbox" id="policy">Must agree on the terms before registrating<span style="color:red">*</span></input>
+        </div>
+        <div class="buttons">
+            <button id="submit">Submit</button>
+            <button id="login"><a href="login.html" target="_blank">Login</a></button>  
+        </div>
+    </form>
+    <script src="js/validateValue.js"></script>
+    <script src="js/register.js"></script>
+</body>
+
+</html>

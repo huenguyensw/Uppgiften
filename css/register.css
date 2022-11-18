@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(204, 205, 204) ;
+}
+#main-container{
+    margin: 20px 40px;
+    background-color: rgb(204, 205, 204);
+    border-radius: 8px 8px;
+    padding: 10px 20px 20px 20px;
+    border: 2px double rgb(9, 9, 9);
+}
+.email-pass{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+#email, #password, #address1, #address2, #city, #zip, #birthyear{
+    margin-top: 5px;
+    width: 100%;
+    height: 1.8rem;
+    border-radius: 4px 4px;
+    border: none;
+}
+#textarea{
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 4px 4px;
+    border: none;
+}
+.address, .city-zip-birthday,.policy,.buttons, .textarea{
+    padding-top: 20px;
+}
+.city-zip-birthday{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    column-gap: 10px;
+}
+#submit, #login{
+    background-color: rgba(0, 128, 0, 0.431);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#login a{
+    text-decoration:none;
+    color: white
+}
